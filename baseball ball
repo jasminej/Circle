@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/viram/1/edit
+-->
+<head>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+
+<style id="jsbin-css">
+
+</style>
+</head>
+<body>
+
+<script>
+var width = 400;
+var height = 400;
+
+
+var feline = Raphael(0,0,width,height);
+var face = feline.circle(22,200,22);
+
+
+function goat(){
+face.animate({cx:200,cy:400-22},1000,up);
+}
+function up() {
+    face.animate({cx:400-22,cy:200},1000, top2);
+}
+
+function top2() {
+   face.animate({cx:400/2,cy:22},1000,back);
+  }
+
+function back(){
+  face.animate({cx:0,cy:200},1000,goat);
+
+}
+   
+back();
+</script>
+</body>
+</html>
